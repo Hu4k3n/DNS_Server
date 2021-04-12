@@ -1,0 +1,5 @@
+nitc.ac.in-aaaa
+yahoo.com-aaaa
+yahoo.com-a
+reddit.com-a
+google.com-ns
