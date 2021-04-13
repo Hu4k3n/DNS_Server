@@ -339,9 +339,11 @@ void handle_query(char site_name[100],char type[10],char result[1000])
 
 }
 // Driver code
-// void main() 
-// {
-//     char site_name[100]="reddit.com";
-//     char type[10]="a";  
-//     handle_query(site_name,type);
-// }
+void main() 
+{
+    char site_name[100]="reddit.com";
+    char type[10]="cname"; 
+    char result[1000] ;
+    handle_query(site_name,type,result);
+    printf("%s\n",result);
+}

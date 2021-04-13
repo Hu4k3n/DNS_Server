@@ -1,10 +1,33 @@
-Server:		ns1.registry.in.
-Address:	37.209.192.12#53
+Server:		k.root-servers.net.
+Address:	193.0.14.129#53
 
-ac.in	nameserver = ns1.registry.in.
-ac.in	nameserver = ns4.registry.in.
-ac.in	nameserver = ns3.registry.in.
-ac.in	nameserver = ns2.registry.in.
-ac.in	nameserver = ns5.registry.in.
-ac.in	nameserver = ns6.registry.in.
+Non-authoritative answer:
+*** Can't find com: No answer
+
+Authoritative answers can be found from:
+com	nameserver = a.gtld-servers.net.
+com	nameserver = b.gtld-servers.net.
+com	nameserver = c.gtld-servers.net.
+com	nameserver = d.gtld-servers.net.
+com	nameserver = e.gtld-servers.net.
+com	nameserver = f.gtld-servers.net.
+com	nameserver = g.gtld-servers.net.
+com	nameserver = h.gtld-servers.net.
+com	nameserver = i.gtld-servers.net.
+com	nameserver = j.gtld-servers.net.
+com	nameserver = k.gtld-servers.net.
+com	nameserver = l.gtld-servers.net.
+com	nameserver = m.gtld-servers.net.
+a.gtld-servers.net	internet address = 192.5.6.30
+a.gtld-servers.net	has AAAA address 2001:503:a83e::2:30
+b.gtld-servers.net	internet address = 192.33.14.30
+b.gtld-servers.net	has AAAA address 2001:503:231d::2:30
+c.gtld-servers.net	internet address = 192.26.92.30
+c.gtld-servers.net	has AAAA address 2001:503:83eb::30
+d.gtld-servers.net	internet address = 192.31.80.30
+d.gtld-servers.net	has AAAA address 2001:500:856e::30
+e.gtld-servers.net	internet address = 192.12.94.30
+e.gtld-servers.net	has AAAA address 2001:502:1ca1::30
+f.gtld-servers.net	internet address = 192.35.51.30
+f.gtld-servers.net	has AAAA address 2001:503:d414::30
 

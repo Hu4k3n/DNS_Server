@@ -361,7 +361,31 @@ void DNSNameToString(char *str, DNSQuestion *qstn)
 //     Cache = entry;
 //     printf("\n[Added to Cache: %s]\n", qstn->QNAME);
 // }
-
+int cname( char *RDATA,char re[100], char website[100])
+{
+    char r[100],*token;
+    strcpy(r, re);
+    int i = 0,loop = 0;
+    token = strtok(r, ".");
+    while(token!=NULL)
+    {
+        //printf("%s %d\n", token, strlen(token));
+        short m = strlen(token);
+        RDATA[i] = m;
+        i++;
+        loop = 0;
+        while(token[loop] != '\0')
+        {
+            RDATA[i] = token[loop];
+            loop++;
+            i++;
+        }
+        token=strtok(NULL, ".");
+    }
+   
+    RDATA[i++] = 0;
+    return i;
+}
 void fetchIterative(DNSQuestion *qstn, DNSAns *ans)
 {
     printf("\n[ Fetching Iteratively ]\n");
@@ -398,11 +422,25 @@ void fetchIterative(DNSQuestion *qstn, DNSAns *ans)
         else
             ans->RDLENGTH=0;
     }
-    else if (qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x2) //NS Query
+    // else if (qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x2) //NS Query
+    // {
+
+    // }
+    // else if(qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x5) //CNAME Query
+    // {
+
+    // }
+    else if ((qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x5)||(qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x2)) //CNAME Query and NS
     {
-    }
-    else if (qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x5) //CNAME Query
-    {
+        handle_query(site_name,"cname",result);
+        // printf("%s\n",result);
+        if(strcmp(result,"NO")!=0)
+        {
+            int r = cname(ans->RDATA, result, result);
+            ans -> RDLENGTH = r;
+        }
+        else
+            ans->RDLENGTH=0;
     }
 }
     // unsigned short root = 1;

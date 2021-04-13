@@ -1,5 +1,3 @@
-nitc.ac.in-aaaa
-yahoo.com-aaaa
-yahoo.com-a
+reddit.com-cname
+google.com-cname
 reddit.com-a
-google.com-ns
