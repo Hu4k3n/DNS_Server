@@ -28,6 +28,7 @@ int ends_with(char *a,char *b)
 }
 int starts_with(char *a,char *b)
 {
+    // printf("COMPARE : %s %s \n",a,b);
     if(a[0]==b[0])
     {
         for(int i=1;i<strlen(b);i++)

@@ -1,3 +1,4 @@
 reddit.com-cname
+ieee.org-aaaa
+reddit.com-aaaa
 google.com-cname
-reddit.com-a

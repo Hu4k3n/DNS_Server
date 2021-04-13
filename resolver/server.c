@@ -400,8 +400,16 @@ void fetchIterative(DNSQuestion *qstn, DNSAns *ans)
     char result[1000];
 
     substring(qry,site_name,1,strlen(qry)-1);
-
-    printf("QRY: %s\n", site_name);
+    // printf("COMPARE : %d",starts_with(site_name,"www"));
+    if(starts_with(site_name,"www"))
+    {
+        char site[50];
+        substring(site_name,site,5,strlen(site_name));
+        // printf("\nOLD SITE: %s\nNEW SITE : %s",site_name,site);
+        strcpy(site_name,site);
+    }
+    printf("SITE: %s",site_name);
+    // printf("QRY: %s\n", site_name);
     if (qstn->QTYPE[0] == 0 && qstn->QTYPE[1] == 0x1) //A Query
     {
             handle_query(site_name,"a",result);
