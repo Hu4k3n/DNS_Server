@@ -337,6 +337,38 @@ void handle_query(char site_name[100],char type[10],char result[1000])
             token = strtok(NULL, " \t\n");
         }
     }
+    else if(strcmp(type,"ns")==0)
+    {
+        char *token=strtok(result," \t\n");
+        int flag=0;
+        while(token!=NULL)
+        {
+            // printf("%s\n",token);
+            if(strcmp("No",token)==0)
+            {
+                flag++;
+                // printf("%s\n",token);
+            }
+            if(strcmp("can't",token)==0)
+            {
+                flag++;
+                // printf("%s\n",token);
+            }
+            if(flag>0)
+            {
+                strcpy(result,"NO");
+                break;
+            }
+            if(strcmp("Server:",token)==0)
+            {
+                token = strtok(NULL, " \t\n");
+                strcpy(result,token);
+                printf(":%s:\n",result);
+                break;
+            }
+            token = strtok(NULL, " \t\n");
+        }
+    }
 
 }
 // Driver code

@@ -1,4 +1,4 @@
-reddit.com-cname
-ieee.org-aaaa
+google.com-ns
 reddit.com-aaaa
-google.com-cname
+yahoo.co.in-a
+google.com-aaaa
